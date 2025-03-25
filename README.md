@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# Who Wants to Be a Millionaire - Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern clone of the famous TV game show "Who Wants to Be a Millionaire" (WWTBAM) built with React, TypeScript, Vite, and Supabase.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Six different game sessions with unique sets of questions
+- Authentic game mechanics including the iconic 50/50 and Call-a-Friend wildcards
+- Sound effects and music for immersive gameplay experience
+- Fully responsive design for mobile, tablet, and desktop
+- French language interface (Qui Veut Gagner des Millions)
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 19 with TypeScript
+- **Build Tool**: Vite 6
+- **Styling**: TailwindCSS 4
+- **Routing**: React Router 7
+- **Database**: Supabase
+- **Code Quality**: BiomeJS
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18.0.0 or higher)
+- Bun package manager (recommended)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/wwtbam-clone.git
+   cd wwtbam-clone
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   bun install
+   ```
+
+3. Set up environment variables:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Update the `.env` file with your Supabase credentials.
+
+4. Start the development server:
+
+   ```bash
+   bun run dev
+   ```
+
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Project Structure
+
+```
+wwtbam-clone/
+├── src/
+│   ├── assets/       # Audio files, images, etc.
+│   ├── components/   # Reusable UI components
+│   ├── lib/          # Supabase client and API utilities
+│   └── utils/        # Helper functions and custom hooks
+├── public/           # Static assets
+└── ...configuration files
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Game Flow
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Select one of six available game sessions from the home screen
+2. Answer a series of increasingly difficult questions
+3. Use wildcards strategically when needed
+4. Win the game by correctly answering all questions
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Development
+
+- Run development server: `bun run dev`
+- Build for production: `bun run build`
+- Preview production build: `bun run preview`
+
+## License
+
+This project is for educational purposes only. The "Who Wants to Be a Millionaire" format and branding are the property of their respective owners.
